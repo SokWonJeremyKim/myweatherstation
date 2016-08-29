@@ -41,7 +41,7 @@ def getrainingLocations():
         return 'NONE'
     json_objects = []
     for result in rainingLocationsPastHour:
-        json_objects.append('{"sido":"' + result.sido + '","sigungu":"' + result.sigungu + '","reportedTime":"' + str(result.reportedTime) + '"}')  
+        json_objects.append('{"sido":"' + result.sido + '","sigungu":"' + result.sigungu + '","reportedTime":"' + str(int(result.reportedTime)) + '"}')  
     json_result = ','.join(json_objects)
     json_result = '{"locations":[' + json_result + ']}'
     return json_result
@@ -52,4 +52,5 @@ def close_session(exception = None):
 
 if __name__ == '__main__':
     model.Base.metadata.create_all()
-    app.run(host='0.0.0.0', port=80)
+    # app.run(host='0.0.0.0', port=80)
+    app.run(debug=True)
