@@ -19,7 +19,7 @@ model.Session.configure(bind = app.db_engine)
 
 @app.route('/')
 def index():
-    return "hello"
+    return "hello world! =)"
 
 @app.route('/rainingHere/', methods = ['POST'])
 def reportRain():
@@ -31,7 +31,7 @@ def reportRain():
 
     Session.add(Location(sido, sigungu))
     Session.commit()
-    return 'SUCCESSFUL'
+    return 'SUCCESSFULLY RETURNED'
 
 @app.route('/rainingLocations/', methods = ['GET'])
 def getrainingLocations():
