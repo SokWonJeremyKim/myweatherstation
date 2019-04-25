@@ -31,7 +31,7 @@ def reportRain():
 
     Session.add(Location(sido, sigungu))
     Session.commit()
-    return 'SUCCESSFUL'
+    return 'SUCCESSFULLY RETURNED'
 
 @app.route('/rainingLocations/', methods = ['GET'])
 def getrainingLocations():
