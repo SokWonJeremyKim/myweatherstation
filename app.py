@@ -35,7 +35,7 @@ def reportRain():
 
 @app.route('/rainingLocations/', methods = ['GET'])
 def getrainingLocations():
-    rainingLocationsPastHour = Session.query(Location).filter(Location.reportedTime > (time.time() - 3600)).all()
+    rainingLocationsPastHour = Session.query(Location).filter(Location.reportedTime > (time.time() - 7200)).all()
     if rainingLocationsPastHour is None:
         print 'no raining locations' 
         return 'NONE'
