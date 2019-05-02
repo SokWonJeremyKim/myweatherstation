@@ -19,7 +19,7 @@ model.Session.configure(bind = app.db_engine)
 
 @app.route('/')
 def index():
-    return "hello world! =)"
+    return "hello world! I'm Jerry =)"
 
 @app.route('/rainingHere/', methods = ['POST'])
 def reportRain():
