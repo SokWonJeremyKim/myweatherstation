@@ -9,7 +9,7 @@ Session = scoped_session(sessionmaker(query_cls = Query))
 
 class Location(Base):
     __tablename__ = "locations"
-    id = Column(Integer, primary_key = True)
+    id = Column(Integer, primary_key = False)
     sido = Column(String)
     sigungu = Column(String)
     reportedTime = Column(Float)

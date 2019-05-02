@@ -19,7 +19,7 @@ model.Session.configure(bind = app.db_engine)
 
 @app.route('/')
 def index():
-    return "hello world! =)"
+    return "hello world! I'm Jerry =)"
 
 @app.route('/rainingHere/', methods = ['POST'])
 def reportRain():
@@ -35,7 +35,7 @@ def reportRain():
 
 @app.route('/rainingLocations/', methods = ['GET'])
 def getrainingLocations():
-    rainingLocationsPastHour = Session.query(Location).filter(Location.reportedTime > (time.time() - 3600)).all()
+    rainingLocationsPastHour = Session.query(Location).filter(Location.reportedTime > (time.time() - 7200)).all()
     if rainingLocationsPastHour is None:
         print 'no raining locations' 
         return 'NONE'
